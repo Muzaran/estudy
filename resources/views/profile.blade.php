@@ -13,6 +13,6 @@
     <h3>owner: <?= $nama; ?></h3>
     <img src="img/zaky.jpeg" alt="zaky" width="200">
     <h2>MY NAME IS  {{$nama;}} 
-     </h2><a href=""></a>
+     </h2>
 </body>
 </html>
