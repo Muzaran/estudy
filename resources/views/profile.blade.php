@@ -9,6 +9,7 @@
     <a href="/">Home</a>
     <a href="/profile">About</a>
     <a href="/login">Login</a>
+    <a href="/contact">contact</a>
     <h1>Profile</h1>
     <h3>owner: <?= $nama; ?></h3>
     <img src="img/zaky.jpeg" alt="zaky" width="200">

@@ -9,6 +9,7 @@
     <a href="/">Home</a>
     <a href="/profile">About</a>
     <a href="/login">Login</a>
+    <a href="/contact">contact</a>
     <h1>Dashboard</h1>
 </body>
 </html>

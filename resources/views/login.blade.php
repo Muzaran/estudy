@@ -1,6 +1,7 @@
 <a href="/">Home</a>
 <a href="/profile">About</a>
 <a href="/login">Login</a>
+<a href="/contact">contact</a>
 
 <style type="text/css">
 	.loginArea {
