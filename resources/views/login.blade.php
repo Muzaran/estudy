@@ -1,14 +1,6 @@
-<a href="/">Home</a>
-<a href="/profile">About</a>
-<a href="/login">Login</a>
-<a href="/contact">contact</a>
-
-<style type="text/css">
-	.loginArea {
-    	margin-top: 130px;
-	}
-</style>
-<div id="loginResponse"></div>
+<x-layout>
+	<x-slot:title>{{ $title }}</x-slot:title>
+	<div id="loginResponse"></div>
 <div class="loginInputLabel">Login Id</div>
 <input type="text" id="login_id" name="login_id" placeholder="Enter Login Id">
 <div class="loginInputLabel">Password</div>
@@ -19,3 +11,5 @@
 </div>
 <button class="loginBtn btnRed" id="loginBtn" onclick="login()">Login Class Room</button>
 <center>Not registred? <a id="loadRegistrationBtn" href="javascript:loadLoginArea('registration');"><u><b>Create an account</b></u></a></center>
+
+</x-layout>
