@@ -4,26 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="css/style.css">
+    @vite('resources/css/app.css')
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    {{-- <link rel="stylesheet" href="css/style.css"> --}}
 </head>
 <body>
-    <a href="/">Home</a>
-    <a href="/profile">About</a>
-    <a href="/login">Login</a>
-    <a href="/contact">contact</a>
-    <h1>Home</h1>
-   <article>
-    <h3>judul 1</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint magni ratione possimus velit, iure facere labore vitae fugiat quo, sit exercitationem fuga minus, sed aut nisi ullam hic illo sequi accusantium distinctio veniam. Minus veniam doloribus harum voluptatibus sed, asperiores numquam ad sunt sapiente aliquid voluptates at aspernatur est unde sint magni consectetur mollitia. Dignissimos, deleniti maxime? Magni aperiam placeat quam amet. Molestiae, mollitia illo maxime recusandae nisi amet ipsa eveniet est facilis fugit ratione id corrupti expedita vitae quidem culpa odit nesciunt officia deleniti autem. Iusto vitae, sapiente molestias, tenetur aspernatur harum totam rem aut exercitationem laboriosam, sequi nobis eum veniam est vel repellendus nemo reiciendis incidunt? Nobis, molestiae porro.</p>
-   </article>
-   <article>
-    <h3>judul 2</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint magni ratione possimus velit, iure facere labore vitae fugiat quo, sit exercitationem fuga minus, sed aut nisi ullam hic illo sequi accusantium distinctio veniam. Minus veniam doloribus harum voluptatibus sed, asperiores numquam ad sunt sapiente aliquid voluptates at aspernatur est unde sint magni consectetur mollitia. Dignissimos, deleniti maxime? Magni aperiam placeat quam amet. Molestiae, mollitia illo maxime recusandae nisi amet ipsa eveniet est facilis fugit ratione id corrupti expedita vitae quidem culpa odit nesciunt officia deleniti autem. Iusto vitae, sapiente molestias, tenetur aspernatur harum totam rem aut exercitationem laboriosam, sequi nobis eum veniam est vel repellendus nemo reiciendis incidunt? Nobis, molestiae porro.</p>
-   </article>
+    <!-- Navbar section with Alpine.js for interactivity -->
+    <nav class="bg-gray-800" x-data="{ isMenuOpen: false, isProfileOpen: false }">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="relative flex h-16 items-center justify-between">
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <!-- Mobile menu button -->
+                    <button 
+                        type="button" 
+                        @click="isMenuOpen = !isMenuOpen; isProfileOpen = false" 
+                        class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" 
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon when menu is closed -->
+                        <svg :class="{'hidden': isMenuOpen, 'block': !isMenuOpen}" class="block w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                        <!-- Icon when menu is open -->
+                        <svg :class="{'block': isMenuOpen, 'hidden': !isMenuOpen}" class="hidden w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="flex shrink-0 items-center">
+                        <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+                    </div>
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-4">
+                            <!-- Navigation links -->
+                            <a href="/" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</a>
+                            <a href="/profile" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                            <a href="/login" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Login</a>
+                            <a href="contact" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <span class="sr-only">View notifications</span>
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                        </svg>
+                    </button>
+                    <!-- Profile dropdown -->
+                    <div class="relative ml-3">
+                        <div>
+                            <button 
+                                type="button" 
+                                @click="isProfileOpen = !isProfileOpen; isMenuOpen = false" 
+                                class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" 
+                                id="user-menu-button" 
+                                aria-expanded="false" 
+                                aria-haspopup="true">
+                                <span class="sr-only">Open user menu</span>
+                                <img class="w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                            </button>
+                        </div>
+                        <div 
+                            x-show="isProfileOpen"
+                            x-transition:enter="transition ease-out duration-100 transform"
+                            x-transition:enter-start="opacity-0 scale-95"
+                            x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75 transform"
+                            x-transition:leave-start="opacity-100 scale-100"
+                            x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none" 
+                            role="menu" 
+                            aria-orientation="vertical" 
+                            aria-labelledby="user-menu-button" 
+                            tabindex="-1">
+                            <!-- Dropdown links -->
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Your Profile</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Settings</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1">Sign out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div x-show="isMenuOpen" class="sm:hidden" id="mobile-menu">
+            <div class="space-y-1 px-2 pb-3 pt-2">
+                <a href="/" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
+                <a href="/profile" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                <a href="/login" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Login</a>
+                <a href="/contact" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <header class="bg-white shadow">
+        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900">Home Page</h1>
+        </div>
+    </header>
+    <main>
+        <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+            <!-- Your content -->
+            <p>Wellcome</p>
+        </div>
+    </main>
+    
+    
 
     <script src="js/script.js"></script>
 </body>
-
 </html>
-
-
