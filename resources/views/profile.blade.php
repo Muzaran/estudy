@@ -13,6 +13,8 @@
     <h3>owner: <?= $nama; ?></h3>
     <img src="img/zaky.jpeg" alt="zaky" width="200">
     <h2>MY NAME IS  {{$nama;}} 
+        <p>Pekerjaan saya adalah seorang <?= $work ?> 
+        </p>
      </h2>
 </body>
 </html>

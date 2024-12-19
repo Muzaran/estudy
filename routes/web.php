@@ -11,7 +11,8 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/profile', function () {
-    return view('profile', ['nama' => 'Muhamad Zaky Nugraha Aulia Rahmat' ]);
+    return view('profile', ['nama' => 'Muhamad Zaky Nugraha Aulia Rahmat',
+                            'work' => 'Programer' ]);
 });
 
 Route::get('/login', function () {
