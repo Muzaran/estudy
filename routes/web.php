@@ -35,12 +35,12 @@ Route::get('/posts', function () {
 ]);
 });
 
-Route::get('/posts/{slug}', function($slug) { 
+Route::get('/posts/{post:slug}', function(Posts $post) { 
    
     
     // $post = Posts::find($slug);
     //     return view('post', ['title' => 'Single post', 'post' => $post]);
-    $post = Posts::find($slug);
+    //$post = Posts::find($slug);
         return view('post', ['title' => 'Single post', 'post' => $post]);
     
 });

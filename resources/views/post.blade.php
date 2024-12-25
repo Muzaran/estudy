@@ -8,7 +8,7 @@
                 {{$post ['title']}}</h1>
         </a>
         <div>
-            <a href="#">{{{$post['author']}}}</a> | 1 desember 2024
+            <a href="#">{{{$post['author']}}}</a> | {{$post->created_at->diffForHumans()}}
         </div class="text-base text-gray-500">
         <p>
             {{ $post['body']}}
