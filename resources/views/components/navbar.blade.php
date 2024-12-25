@@ -27,9 +27,10 @@
                     <div class="flex space-x-4">
                         <!-- Navigation links -->
                         <x-nav-link href="/" :active="request()->is('/')">Dasboard</x-nav-link>
-                        <x-nav-link href="/profile" :active="request()->is('/profile')">About</x-nav-link>
-                        <x-nav-link href="/contact" :active="request()->is('/contact')">Contact</x-nav-link>
-                        <x-nav-link href="/login" :active="request()->is('/login')">Login</x-nav-link>
+                        <x-nav-link href="/profile" :active="request()->is('profile')">About</x-nav-link>
+                        <x-nav-link href="/posts" :active="request()->is('posts')">Blog</x-nav-link>
+                        <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
+                        <x-nav-link href="/login" :active="request()->is('login')">Login</x-nav-link>
                      
                     </div>
                 </div>
@@ -80,11 +81,13 @@
     <!-- Mobile menu -->
     <div x-show="isMenuOpen" class="sm:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2">
-            <x-nav-link href="/" :active="request()->is('/')">Dasboard</x-nav-link>
-            <a href="/" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-            <a href="/profile" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
-            <a href="/login" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Login</a>
-            <a href="/contact" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
-        </div>
+             <!-- Navigation links -->
+             <x-nav-link-mobile href="/" :active="request()->is('/')">Dasboard</x-nav-link-mobile>
+             <x-nav-link-mobile href="/profile" :active="request()->is('profile')">About</x-nav-link-mobile>
+             <x-nav-link-mobile href="/posts" :active="request()->is('posts')">Blog</x-nav-link-mobile>
+             <x-nav-link-mobile href="/contact" :active="request()->is('contact')">Contact</x-nav-link-mobile>
+             <x-nav-link-mobile href="/login" :active="request()->is('login')">Login</x-nav-link-mobile>
+
+           </div>
     </div>
 </nav>
