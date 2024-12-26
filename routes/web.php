@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('home', ['title' => 'Halaman Home']);
+    return view('home', ['title' => 'Halaman Home', 'nama' => 'Muhamad Zaky Nugraha Aulia Rahmat']);
 });
 
 Route::get('/dashboard', function () {
@@ -31,6 +31,12 @@ Route::get('/contact', function () {
 
 Route::get('/posts', function () {
     return view('posts', ['title' => 'Halaman Blog', 'posts' => Posts:: all()
+
+]);
+});
+
+Route::get('/navbar', function () {
+    return view('navbar', ['title' => 'Halaman Blog', 'posts' => Posts:: all()
 
 ]);
 });
