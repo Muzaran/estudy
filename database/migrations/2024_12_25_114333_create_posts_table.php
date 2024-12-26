@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Validation\Rules\Unique;
 use Nette\Schema\Schema as SchemaSchema;
 
+use function Laravel\Prompts\table;
+
 return new class extends Migration
 {
     /**
@@ -20,7 +22,10 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')-> unique();
-            $table->string('author');
+            $table->foreignId('author_id')->constrained(
+                    table: 'users',
+                    indexName: 'post_author_id'
+            );
             $table->text('body');
             $table->timestamp('timer')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamps();

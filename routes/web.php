@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Posts;
+use App\Models\User;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
@@ -35,11 +36,7 @@ Route::get('/posts', function () {
 ]);
 });
 
-Route::get('/navbar', function () {
-    return view('navbar', ['title' => 'Halaman Blog', 'posts' => Posts:: all()
 
-]);
-});
 
 Route::get('/posts/{post:slug}', function(Posts $post) { 
    
@@ -51,4 +48,8 @@ Route::get('/posts/{post:slug}', function(Posts $post) {
     
 });
 
- 
+Route::get('/authors/{user}', function(User $user) { 
+   
+        return view('posts', ['title' => 'Artikels by'. $user->name, 'posts' => $user->posts]);
+    
+});

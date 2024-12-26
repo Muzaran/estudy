@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 /**
@@ -20,7 +21,7 @@ class PostsFactory extends Factory
             //
             'title'=> fake()-> sentence(10),
             'slug'=> Str::slug (fake()->sentence()),
-            'author'=> fake()->name(),
+            'author_id'=>User::factory(),
             'body'=> fake()->text()
         ];
     }
