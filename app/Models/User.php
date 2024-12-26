@@ -47,7 +47,8 @@ class User extends Authenticatable
         ];
     }
 
-public function posts():HasMany{
+public function posts():HasMany
+{
 // sebenarnya sudah bisa diakses dengan defaultnya user_id tapi
 // kita buatnya jadi author_id jadi harus ditulis lagi
     return $this->hasMany(Posts::class, 'author_id');

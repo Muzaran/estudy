@@ -48,8 +48,8 @@ Route::get('/posts/{post:slug}', function(Posts $post) {
     
 });
 
-Route::get('/authors/{user}', function(User $user) { 
+Route::get('/authors/{user:username}', function(User $user) { 
    
-        return view('posts', ['title' => 'Artikels by'. $user->name, 'posts' => $user->posts]);
+        return view('posts', ['title' => count($user->posts) . ' Artikels by : '. $user->name, 'posts' => $user->posts]);
     
 });
