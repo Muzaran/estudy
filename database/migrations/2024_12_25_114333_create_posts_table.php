@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Validation\Rules\Unique;
+use Nette\Schema\Schema as SchemaSchema;
 
 return new class extends Migration
 {
@@ -12,7 +14,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+       
             //posts
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
@@ -26,7 +28,7 @@ return new class extends Migration
         
 
         });
-        });
+        
     }
 
     /**
