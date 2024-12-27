@@ -163,3 +163,35 @@ li.nav-item {
 
 
 }
+
+.article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.article h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.article h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.article p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.article ul {
+    margin-left: 20px;
+}
+
+.article li {
+    font-size: 1rem;
+}

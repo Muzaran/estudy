@@ -27,7 +27,7 @@
     <div class="user-info">
         <img src="/img/zaky.jpeg" alt="Profile" class="profile-pic" />
         <div class="user-details">
-            <span class="user-name">ghf</span>
+            <span class="user-name">Muhamad Zaky nugraha A R</span>
             <span class="time">{{ now()->format('d F Y, H:i') }} WIB</span>
         </div>
     </div>
