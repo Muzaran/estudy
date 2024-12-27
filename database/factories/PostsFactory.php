@@ -21,9 +21,9 @@ class PostsFactory extends Factory
         return [
             //
             'title'=> fake()-> sentence(10),
+            'author_id'=> User::factory(),
+            'category_id'=> Category::factory(),
             'slug'=> Str::slug (fake()->sentence()),
-            'author_id'=>User::factory(),
-            'category_id'=>Category::factory(),
             'body'=> fake()->text()
         ];
     }

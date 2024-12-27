@@ -15,7 +15,10 @@ class Posts extends Model
     public function author():BelongsTo{
         return $this-> belongsTo(User::class);
     }
-    public function category() : BelongsTo {
+
+
+    public function category(): BelongsTo 
+    {
         return $this-> belongsTo(category::class );
     }
 
