@@ -1,3 +1,13 @@
+@vite('resources/css/app.css')
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+
+
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
 <nav class="nav" id="nav-menu">
     <div class="nav-toggle" id="nav-toggle">
         <span class="bar"></span>
@@ -12,7 +22,7 @@
     <ul class="nav-bar">
         <li class="nav-item">
             <img src="/img/akademik.png" class="nav-icon" />
-            <a href="/posts">Blog</a>
+            <a href="/posts">Menu</a>
         </li>
         <li class="nav-item">
             <img src="/img/keuaangan.png" class="nav-icon" />
@@ -38,7 +48,7 @@
     <ul class="nav-mobile" id="nav-mobile">
         <li class="nav-item">
             <img src="img/akademik.png"  class="nav-icon" />
-            <a href="/posts">Blog</a>
+            <a href="/posts">Menu</a>
         </li>
         <li class="nav-item">
             <img src="img/keuaangan.png"  class="nav-icon" />
@@ -50,3 +60,4 @@
         </li>
     </ul>
     
+    <script src="js/script.js"></script>

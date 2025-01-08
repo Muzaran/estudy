@@ -1,11 +1,26 @@
 
 
 <x-layout>
-<x-slot:title>{{ $title }}</x-slot:title>
-    <h1>Profile</h1>
-    <h3>owner: <?= $nama; ?></h3>
-    <img src="img/zaky.jpeg" alt="zaky" width="200">
-    <h2>MY NAME IS  {{$nama;}} </h2>
+ 
+
+<div class="hero">
+    <img
+        src="/img/background.png"
+        alt="Konoha Background"
+        class="hero-image"
+    />
+    <x-slot:title>{{ $title }}</x-slot:title>
+    <div class="hero-content">
+       
+        <h1>Profile</h1>
+        <h3>wner: <?= $nama; ?></h3>
+        <img src="img/zaky.jpeg" alt="zaky" width="200">
+        <h2>My name is {{$nama;}} </h2>
+    </div> 
+
+
+
+</div>
 </x-layout>
 
         

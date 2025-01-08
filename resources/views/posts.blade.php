@@ -12,7 +12,7 @@
                 {{$post->author->name}} 
             </a> 
             In
-            <a href="/categories/{{$post->category->slug }}" class="hover:underline text-blue-500">
+            <a href="/categories/{{$post->category->slug}}" class="hover:underline text-blue-500">
                 {{$post->category->name}} 
             </a> 
              |  {{$post->created_at->diffForHumans()}}
